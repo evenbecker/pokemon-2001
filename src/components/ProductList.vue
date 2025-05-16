@@ -1,6 +1,5 @@
 <template>
-    <div class="chiot">
-        <div class="myscroll">
+   
         <div v-for="p in products" v-bind:key="p.id" class="card m-1 p-1 bg-light">
             <h6>            
                 <a href="#" @click="toggleWithShow(p.id)">#{{p.id}} &nbsp;&nbsp;&nbsp; {{p.name }}</a>                                
@@ -9,8 +8,7 @@
             </h6>
         </div>               
         <page-controls />        
-        </div> 
-    </div>
+        
 </template>
 
 <script>
@@ -76,16 +74,6 @@ export default {
 }
 </script>
 <style>
-.chiot {
-    height: 470px;
-    padding-left: 4px;
-    /*background-color: rgb(253, 208, 180);*/
-    overflow: hidden;
-    
-}
-.myscroll {
-    max-height: 100%;
-    overflow-y: scroll;
-}
+
 
 </style>

@@ -1,10 +1,6 @@
 <template>
-    <div class="container-fluid mybackg">
-        <div class="row">
-            <div class="col bg-secondary text-white text-center">
-                <a class="navbar-brand">Pok&eacute;mon store</a>
-            </div>
-        </div>
+    <div class="container-fluid">
+
         <div class="row">
             <div class="col-3 bg-secondary p-2">
                 <CategoryControls />
@@ -46,8 +42,4 @@
         }
     }
 </script>
-<style>
-.mybackg{
-    background-color: white;
-}
-</style>
+
