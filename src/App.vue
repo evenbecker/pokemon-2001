@@ -1,7 +1,8 @@
 <template>
+   
 <div class="container-fluid" id="app">
     <div class="row">
-            <div class="col bg-secondary text-white text-center">
+            <div class="col bg-dark text-white text-center">
                 <a class="navbar-brand">Pok&eacute;dex</a>
             </div>
         </div>
@@ -10,12 +11,16 @@
    
         <div class="col-4"> 
             <div class="row" id="myheight">     
-                <div class="col text-center">    
-                <img alt="card" class="logo" src="./assets/pokemon-logo.webp" />
-                
+                <div class="col text-center">  
+                    
+                    <div class="row"> 
+                        <div class="col py-4">
+                        <button class="btn btn-info" @click="caller = !caller">call by id&nbsp; <font-awesome-icon :icon="['fas', 'chevron-circle-down']" /></button>
+                    </div>
+                    </div>
                 </div>  
             </div>                                
-            <div class="row py-2" id="myheight2">   
+            <div v-show="caller" class="row py-2" id="myheight2">   
                 <div class="col-2"><span>&nbsp;&nbsp;&nbsp;&nbsp;id:</span></div>
                 <div class="col-4">                    
                     <!--<label></label>-->                                        
@@ -29,13 +34,15 @@
                 </div>
             </div> 
     
-            <div class="row" v-if="selectedPokemon">
-                <div class="col pokeImg">
-                    <div class="row">
-                        <div class="col text-center py-4">
-                        <h5 class="capital">{{ selectedPokemon.name }}</h5>
+            <div class="row pokeImg" v-if="selectedPokemon">                
+                <div class="col mx-3 mb-2">
+                    <div class="card bg-light text-dark">
+                    <div class="card-body">
+                        <div id="titre" class="row">
+                            <div class="col text-center py-4">
+                            <h5 class="capital">{{ selectedPokemon.name }}</h5>
+                            </div>
                         </div>
-                    </div>
                                         
                         <div class="row" v-if = "selectedPokemon.id < 152">
                             <div class="col text-center" v-if="gen2 == false">
@@ -51,8 +58,8 @@
                             </div>
                         </div>
                    
-                        <div class="row py-2" id="radioHeight" v-show = "selectedPokemon.id < 152">      
-                            <div class="col text-center">                                         
+                        <div class="row py-2" v-show = "selectedPokemon.id < 152">      
+                            <div class="col text-left mx-5">                                         
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="yellow" v-bind:value="false" v-model="gen2">
                                 <label class="form-check-label" for="yellow">
@@ -67,13 +74,27 @@
                             </div>
                             </div>
                         </div>
-                        <div class="row py-4">
+                        <div class="row pt-4">
                 <div class="col text-center">
-                    <div v-for="(stat, index) in selectedPokemon.stats" :key="index">
+                    <!--<div v-for="(stat, index) in selectedPokemon.stats" :key="index">
                         <p class="mystat">{{ stat.stat.name }}: {{ stat.base_stat }}</p>
+                    </div>-->
+<table class="table table-bordered table-sm">
+  <thead>
+  
+  </thead>
+  <tbody>
+    <tr v-for="(stat,i) in selectedPokemon.stats" :key="i">
+         
+       <td>{{ stat.stat.name }}</td> 
+       <td>{{ stat.base_stat}}</td>  
+    </tr>
+   </tbody>
+</table>
+                </div>
+                        </div>
                     </div>
                 </div>
-                    </div>
                 </div>
             </div>              
             <div class="row" v-else>
@@ -103,6 +124,7 @@
             selectedPokemon: null,
             test:7,
             gen2: true,
+            caller: false
             }
         },
         /*
@@ -153,6 +175,7 @@
 h5.capital {
     text-transform: capitalize;
 }
+
 .pokeImg img {
   width: 90px;
   height: 90px;
@@ -162,25 +185,17 @@ h5.capital {
 p.mystat {
     margin-top: -1em;
 }
-
-.logo {
-    
-  
-  width: 210px;
-  height: auto;
+#titre{
+    height: 4em;
 }
 #myheight{
-    height: 120px;
+    height: 84px;/* 120px*/
     
 }
 #myheight2{
-    height: 70px;    
+    height: 60px;  /* 70px*/ 
 }
 
-#radioHeight{
-    height: 60px;
-    /*background-color: beige;*/
-}
 .chiot{
     margin-left:-15px;
 }

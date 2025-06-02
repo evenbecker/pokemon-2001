@@ -2,7 +2,7 @@
     <div class="row py-2 mt-2 mytrick">
         <div class="col form-group">
             <select class="form-control" v-on:change="changePageSize">
-                <option value="8">8 per page</option>
+                <option value="12">12 per page</option>
                 <option value="16">16 per page</option>
                 <option value="24">24 per page</option>
             </select>

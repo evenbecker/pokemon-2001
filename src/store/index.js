@@ -19,7 +19,7 @@ const store = createStore({
         
         productsTotal: 0,
         currentPage: 1,
-        pageSize: 8,
+        pageSize: 12,
         currentCategory: "All"
         }
     },

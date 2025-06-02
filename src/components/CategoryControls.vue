@@ -8,11 +8,11 @@
                 {{ c }}
             </button>
         </div> 
-        <div class="row my-2 text-white">
-            
-            <div class = "mymarg">
-            <div id="mymargin"> Original 2001 data (Gen II)</div>
-            <div id="mymargin2"> Gotta Catch 'Em All</div>   
+        <div class="row my-2 text-white">            
+            <div class="col">
+                <div id="mymargin"> Original 2001 data (Gen II)</div>
+                <img alt="card" class="img-responsive logo2" src="../assets/pokemon-logo.webp" />
+                <div id="mymargin2"> Gotta Catch 'Em All </div>   
             </div>        
         </div> 
     </div>
@@ -32,16 +32,23 @@
     }
 </script>
 <style> 
-.mymarg {
-    margin-left: 20px;
-    margin-right: 20px;
-}
+
 #mymargin {
-    margin-top: 80px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
 }
 #mymargin2 {
-    margin-top: 34px;
+    margin-top: 14px;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+.logo2 {
+    width: 100%;
+    object-fit: cover;
+   
+  }
 </style> 
